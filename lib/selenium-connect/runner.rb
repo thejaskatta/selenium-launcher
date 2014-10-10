@@ -6,7 +6,7 @@ class SeleniumConnect
 
     attr_reader :browser, :driver
 
-    def initialize(*config)
+    def initialize
       @browser = SeleniumConnect::Browser.load
       launch
     end

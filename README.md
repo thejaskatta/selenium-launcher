@@ -11,3 +11,5 @@
 
 + The HTML and XML output are ripe candidates for their own gem. But that's a problem for later.
 + Will need to sort out the best way to handle browser driver downloads per OS. Simplest thing to start is to let the user do the work. Could automate this later.
++ Cloud execution will need to be added later, but that has additional considerations that impact reporting. So that will be deferred for now.
++ Mobile is also a consideration. Again, one to defer for now.

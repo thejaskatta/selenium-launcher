@@ -1,6 +1,6 @@
-require_relative '../../lib/selenium-connect/browser'
+require_relative '../lib/selenium-connect/browser'
 
-describe 'Browser returns' do
+describe 'Browser returns', unit: true do
 
   it 'Chrome' do
     ENV['BROWSER'] = 'chrome'

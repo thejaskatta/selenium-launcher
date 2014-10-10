@@ -1,6 +1,6 @@
-require_relative '../../lib/selenium-connect/runner'
+require_relative '../lib/selenium-connect/runner'
 
-describe 'Runner launches' do
+describe 'Runner launches', integration: true do
 
   after(:each) do
     @runner.quit

@@ -3,7 +3,7 @@ require_relative 'browsers/firefox'
 require_relative 'browsers/internet-explorer'
 require_relative 'browsers/safari'
 
-class SeleniumConnect
+class SeleniumLauncher
   class Browser
 
     attr_reader :name

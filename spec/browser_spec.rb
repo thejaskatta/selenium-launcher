@@ -1,29 +1,29 @@
-require_relative '../lib/selenium-connect/browser'
+require_relative '../lib/selenium-launcher/browser'
 
 describe 'Browser returns', :unit do
 
   it 'Chrome' do
     ENV['SC_BROWSER'] = 'chrome'
-    browser = SeleniumConnect::Browser.load
-    expect(browser.class).to eql SeleniumConnect::Browser::Chrome
+    browser = SeleniumLauncher::Browser.load
+    expect(browser.class).to eql SeleniumLauncher::Browser::Chrome
   end
 
   it 'Firefox' do
     ENV['SC_BROWSER'] = 'firefox'
-    browser = SeleniumConnect::Browser.load
-    expect(browser.class).to eql SeleniumConnect::Browser::Firefox
+    browser = SeleniumLauncher::Browser.load
+    expect(browser.class).to eql SeleniumLauncher::Browser::Firefox
   end
 
   it 'Internet Explorer' do
     ENV['SC_BROWSER'] = 'internet-explorer'
-    browser = SeleniumConnect::Browser.load
-    expect(browser.class).to eql SeleniumConnect::Browser::InternetExplorer
+    browser = SeleniumLauncher::Browser.load
+    expect(browser.class).to eql SeleniumLauncher::Browser::InternetExplorer
   end
 
   it 'Safari' do
     ENV['SC_BROWSER'] = 'safari'
-    browser = SeleniumConnect::Browser.load
-    expect(browser.class).to eql SeleniumConnect::Browser::Safari
+    browser = SeleniumLauncher::Browser.load
+    expect(browser.class).to eql SeleniumLauncher::Browser::Safari
   end
 
 end

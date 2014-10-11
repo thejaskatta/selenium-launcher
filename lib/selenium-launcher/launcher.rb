@@ -1,13 +1,13 @@
 require_relative 'browser'
 require 'selenium-webdriver'
 
-class SeleniumConnect
+class SeleniumLauncher
   class Launcher
 
     attr_reader :browser, :driver
 
     def initialize
-      @browser = SeleniumConnect::Browser.load
+      @browser = SeleniumLauncher::Browser.load
       @driver = launch
     end
 

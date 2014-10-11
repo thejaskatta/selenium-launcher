@@ -1,10 +1,10 @@
-require_relative 'selenium-connect/launcher'
+require_relative 'selenium-launcher/launcher'
 
-class SeleniumConnect
+class SeleniumLauncher
 
   def self.launch
     ConfigChecker.new
-    SeleniumConnect::Launcher.new.driver
+    SeleniumLauncher::Launcher.new.driver
   end
 
   class ConfigChecker

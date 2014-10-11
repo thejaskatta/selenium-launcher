@@ -1,4 +1,4 @@
-class SeleniumConnect
+class SeleniumLauncher
   class Browser
     class InternetExplorer < Browser
 

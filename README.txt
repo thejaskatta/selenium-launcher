@@ -1,4 +1,4 @@
-= Selenium Connect Redux
+= Selenium Launcher
 
 == Punch List:
 
@@ -22,12 +22,12 @@ If these values are not set, a RuntimeError will be returned along with a helpfu
 
 == Getting Started
 
-Selenium Connect will return a Selenium WebDriver object.
+Selenium Launcher will return a Selenium WebDriver object.
 
 === Local
 
 ENV['SC_BROWSER'] = 'firefox'
-driver = SeleniumConnect.launch
+driver = SeleniumLauncher.launch
 driver.quit
 
 === Grid
@@ -35,5 +35,5 @@ driver.quit
 ENV['SC_BROWSER'] = 'firefox'
 ENV['SC_HOST'] = 'grid'
 ENV['SC_HOST_URL'] = 'http://localhost:4444/wd/hub'
-driver = SeleniumConnect.launch
+driver = SeleniumLauncher.launch
 driver.quit

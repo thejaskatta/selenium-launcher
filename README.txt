@@ -17,4 +17,3 @@
 SC_HOST (e.g., 'grid', or nothing)
 SC_HOST_URL (e.g., url to Standalone Remote or Grid instance)
 SC_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
-SC_BIN_DIR (e.g., path to folder that contains Selenium Standalone Server, browser drivers, etc.)

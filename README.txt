@@ -17,3 +17,23 @@
 SC_HOST (e.g., 'grid', or nothing)
 SC_HOST_URL (e.g., url to Standalone Remote or Grid instance)
 SC_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
+
+If these values are not set, a RuntimeError will be returned along with a helpful message.
+
+== Getting Started
+
+Selenium Connect will return a Selenium WebDriver object.
+
+=== Local
+
+ENV['SC_BROWSER'] = 'firefox'
+driver = SeleniumConnect.launch
+driver.quit
+
+=== Grid
+
+ENV['SC_BROWSER'] = 'firefox'
+ENV['SC_HOST'] = 'grid'
+ENV['SC_HOST_URL'] = 'http://localhost:4444/wd/hub'
+driver = SeleniumConnect.launch
+driver.quit

@@ -18,7 +18,7 @@ SL_HOST (e.g., 'grid', or nothing)
 SL_HOST_URL (e.g., URL to Standalone Remote or Grid instance)
 SL_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
 
-If these values are not set, a RuntimeError will be returned along with a helpful message.
+If these values are not set properly, a RuntimeError will be returned along with a helpful message.
 
 == Getting Started
 

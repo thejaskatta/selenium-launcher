@@ -1,6 +1,6 @@
 require_relative 'selenium-launcher/launcher'
 
-class SeleniumLauncher
+module SeleniumLauncher
 
   def self.launch
     ConfigChecker.new

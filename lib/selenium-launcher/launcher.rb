@@ -1,7 +1,7 @@
 require_relative 'browser'
 require 'selenium-webdriver'
 
-class SeleniumLauncher
+module SeleniumLauncher
   class Launcher
 
     attr_reader :browser, :driver

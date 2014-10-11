@@ -1,4 +1,4 @@
-class SeleniumLauncher
+module SeleniumLauncher
   class Browser
     class Firefox < Browser
 

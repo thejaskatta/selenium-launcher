@@ -16,6 +16,10 @@ NOTE: selenium-launcher will return a Selenium WebDriver object.
 + Cloud execution will need to be added later, but that has additional considerations. So that will be deferred for now.
 + Mobile is also a consideration. Again, one to defer for now.
 
+== INSTALL:
+
+sudo gem install selenium-launcher
+
 == USAGE:
 
 === Environment Variables

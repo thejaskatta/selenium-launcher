@@ -10,14 +10,14 @@ describe 'Launcher', :integration do
   context '-> Localhost -> ' do
 
     it 'Chrome' do
-      ENV['SC_BROWSER'] = 'chrome'
+      ENV['SL_BROWSER'] = 'chrome'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :chrome
     end
 
     it 'Firefox' do
-      ENV['SC_BROWSER'] = 'firefox'
+      ENV['SL_BROWSER'] = 'firefox'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :firefox
@@ -25,14 +25,14 @@ describe 'Launcher', :integration do
 
     it 'Internet Explorer' do
       pending 'Windows OS required' unless OS.windows?
-      ENV['SC_BROWSER'] = 'internet-explorer'
+      ENV['SL_BROWSER'] = 'internet-explorer'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :"internet-explorer"
     end
 
     it 'Safari' do
-      ENV['SC_BROWSER'] = 'safari'
+      ENV['SL_BROWSER'] = 'safari'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :safari
@@ -43,19 +43,19 @@ describe 'Launcher', :integration do
   context '-> Grid -> ' do
 
     before(:all) do
-      ENV['SC_HOST'] = 'grid'
-      ENV['SC_HOST_URL'] = 'http://localhost:4444/wd/hub'
+      ENV['SL_HOST'] = 'grid'
+      ENV['SL_HOST_URL'] = 'http://localhost:4444/wd/hub'
     end
 
     it 'Chrome' do
-      ENV['SC_BROWSER'] = 'chrome'
+      ENV['SL_BROWSER'] = 'chrome'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :chrome
     end
 
     it 'Firefox' do
-      ENV['SC_BROWSER'] = 'firefox'
+      ENV['SL_BROWSER'] = 'firefox'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :firefox
@@ -63,14 +63,14 @@ describe 'Launcher', :integration do
 
     it 'Internet Explorer' do
       pending 'Windows OS required' unless OS.windows?
-      ENV['SC_BROWSER'] = 'internet-explorer'
+      ENV['SL_BROWSER'] = 'internet-explorer'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :"internet-explorer"
     end
 
     it 'Safari' do
-      ENV['SC_BROWSER'] = 'safari'
+      ENV['SL_BROWSER'] = 'safari'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :safari

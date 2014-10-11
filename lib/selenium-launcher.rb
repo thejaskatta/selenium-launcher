@@ -16,18 +16,18 @@ class SeleniumLauncher
 
     private
 
-      ERRORS = { NoBrowserSpecified: 'You need to specify a browser (e.g., SC_BROWSER).',
-                 NoGridURLSpecified: 'You need to specify a URL when using a Grid (e.g., SC_HOST_URL).' }
+      ERRORS = { NoBrowserSpecified: 'You need to specify a browser (e.g., SL_BROWSER).',
+                 NoGridURLSpecified: 'You need to specify a URL when using a Grid (e.g., SL_HOST_URL).' }
 
       def browser_check
-        if ENV['SC_BROWSER'].nil?
+        if ENV['SL_BROWSER'].nil?
           raise ERRORS[:NoBrowserSpecified]
         end
       end
 
       def grid_check
-        if ENV['SC_HOST'] == 'grid'
-          if ENV['SC_HOST_URL'].nil?
+        if ENV['SL_HOST'] == 'grid'
+          if ENV['SL_HOST_URL'].nil?
             raise ERRORS[:NoGridURLSpecified]
           end
         end

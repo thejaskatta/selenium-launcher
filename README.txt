@@ -14,9 +14,9 @@
 
 == Environment Variables
 
-SC_HOST (e.g., 'grid', or nothing)
-SC_HOST_URL (e.g., url to Standalone Remote or Grid instance)
-SC_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
+SL_HOST (e.g., 'grid', or nothing)
+SL_HOST_URL (e.g., url to Standalone Remote or Grid instance)
+SL_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
 
 If these values are not set, a RuntimeError will be returned along with a helpful message.
 
@@ -26,14 +26,14 @@ Selenium Launcher will return a Selenium WebDriver object.
 
 === Local
 
-ENV['SC_BROWSER'] = 'firefox'
+ENV['SL_BROWSER'] = 'firefox'
 driver = SeleniumLauncher.launch
 driver.quit
 
 === Grid
 
-ENV['SC_BROWSER'] = 'firefox'
-ENV['SC_HOST'] = 'grid'
-ENV['SC_HOST_URL'] = 'http://localhost:4444/wd/hub'
+ENV['SL_BROWSER'] = 'firefox'
+ENV['SL_HOST'] = 'grid'
+ENV['SL_HOST_URL'] = 'http://localhost:4444/wd/hub'
 driver = SeleniumLauncher.launch
 driver.quit

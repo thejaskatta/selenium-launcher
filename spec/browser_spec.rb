@@ -1,6 +1,6 @@
 require_relative '../lib/selenium-connect/browser'
 
-describe 'Browser returns', unit: true do
+describe 'Browser returns', :unit do
 
   it 'Chrome' do
     ENV['SC_BROWSER'] = 'chrome'

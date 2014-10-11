@@ -1,6 +1,7 @@
+require_relative 'spec_helper'
 require_relative '../lib/selenium-connect/launcher'
 
-describe 'Launcher', integration: true do
+describe 'Launcher', :integration do
 
   after(:each) do
     @launcher.quit
@@ -23,7 +24,7 @@ describe 'Launcher', integration: true do
     end
 
     it 'Internet Explorer' do
-      pending 'Windows setup and OS pre-check required'
+      pending 'Windows OS required' unless OS.windows?
       ENV['SC_BROWSER'] = 'internet-explorer'
       @launcher = SeleniumConnect::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
@@ -46,17 +47,33 @@ describe 'Launcher', integration: true do
       ENV['SC_HOST_URL'] = 'http://localhost:4444/wd/hub'
     end
 
-    #it 'Firefox' do
-    #  pending 'Latest version of Selenium Standalone Server'
-    #  ENV['SC_BROWSER'] = 'firefox'
-    #  @launcher = SeleniumConnect::Launcher.new
-    #end
-
     it 'Chrome' do
       ENV['SC_BROWSER'] = 'chrome'
       @launcher = SeleniumConnect::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :chrome
+    end
+
+    it 'Firefox' do
+      ENV['SC_BROWSER'] = 'firefox'
+      @launcher = SeleniumConnect::Launcher.new
+      expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
+      expect(@launcher.driver.browser).to eql :firefox
+    end
+
+    it 'Internet Explorer' do
+      pending 'Windows OS required' unless OS.windows?
+      ENV['SC_BROWSER'] = 'internet-explorer'
+      @launcher = SeleniumConnect::Launcher.new
+      expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
+      expect(@launcher.driver.browser).to eql :"internet-explorer"
+    end
+
+    it 'Safari' do
+      ENV['SC_BROWSER'] = 'safari'
+      @launcher = SeleniumConnect::Launcher.new
+      expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
+      expect(@launcher.driver.browser).to eql :safari
     end
 
   end

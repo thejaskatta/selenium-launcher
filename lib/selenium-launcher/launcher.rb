@@ -18,11 +18,11 @@ module SeleniumLauncher
     private
 
       def launch
-        case ENV['SL_HOST']
+        case ENV['SE_HOST']
         when 'grid'
           ::Selenium::WebDriver.for(
             :remote,
-            url: ENV['SL_HOST_URL'],
+            url: ENV['SE_HOST_URL'],
             desired_capabilities: browser.capabilities)
         else
           ::Selenium::WebDriver.for browser.name.to_sym

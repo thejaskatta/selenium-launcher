@@ -9,7 +9,7 @@ module SeleniumLauncher
     attr_reader :name
 
     def match?
-      name == ENV['SL_BROWSER']
+      name == ENV['SE_BROWSER']
     end
 
     def capabilities

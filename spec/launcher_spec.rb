@@ -45,6 +45,8 @@ describe 'Launcher', :integration do
     before(:all) do
       ENV['SE_HOST'] = 'grid'
       ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
+      # Start Selenium Standalone Server
+      # For help downloading, see https://github.com/tourdedave/selenium-prep
     end
 
     it 'Chrome' do

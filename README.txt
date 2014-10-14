@@ -26,23 +26,23 @@ sudo gem install selenium-launcher
 
 Configuration occurs through a small set of environment variables:
 
-SL_HOST (e.g., 'grid', or nothing)
-SL_HOST_URL (e.g., URL to Standalone Remote or Grid instance)
-SL_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
+SE_HOST (e.g., 'grid', or nothing)
+SE_HOST_URL (e.g., URL to Standalone Remote or Grid instance)
+SE_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
 
 If these values are not set properly, a RuntimeError will be returned along with a helpful message.
 
 === Local
 
-ENV['SL_BROWSER'] = 'firefox'
+ENV['SE_BROWSER'] = 'firefox'
 driver = SeleniumLauncher.launch
 driver.quit
 
 === Grid
 
-ENV['SL_BROWSER'] = 'firefox'
-ENV['SL_HOST'] = 'grid'
-ENV['SL_HOST_URL'] = 'http://localhost:4444/wd/hub'
+ENV['SE_BROWSER'] = 'firefox'
+ENV['SE_HOST'] = 'grid'
+ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
 driver = SeleniumLauncher.launch
 driver.quit
 

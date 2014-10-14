@@ -3,7 +3,7 @@ require_relative '../lib/selenium-launcher'
 describe 'Selenium Launcher', :acceptance do
 
   it 'runs' do
-    ENV['SL_BROWSER'] = 'firefox'
+    ENV['SE_BROWSER'] = 'firefox'
     driver = SeleniumLauncher.launch
     expect(driver.class).to eql Selenium::WebDriver::Driver
     expect(driver.browser).to eql :firefox
@@ -13,23 +13,23 @@ describe 'Selenium Launcher', :acceptance do
   context '-> Config Checker -> ' do
 
     before(:each) do
-      ENV['SL_BROWSER'] = nil
-      ENV['SL_HOST'] = nil
-      ENV['SL_HOST_URL'] = nil
+      ENV['SE_BROWSER'] = nil
+      ENV['SE_HOST'] = nil
+      ENV['SE_HOST_URL'] = nil
     end
 
     it 'no browser' do
       expect { driver = SeleniumLauncher.launch }.to raise_error(
         RuntimeError,
-        'You need to specify a browser (e.g., SL_BROWSER).')
+        'You need to specify a browser (e.g., SE_BROWSER).')
     end
 
     it 'no Grid host URL' do
-      ENV['SL_BROWSER'] = 'firefox'
-      ENV['SL_HOST'] = 'grid'
+      ENV['SE_BROWSER'] = 'firefox'
+      ENV['SE_HOST'] = 'grid'
       expect { driver = SeleniumLauncher.launch }.to raise_error(
         RuntimeError,
-        'You need to specify a URL when using a Grid (e.g., SL_HOST_URL).')
+        'You need to specify a URL when using a Grid (e.g., SE_HOST_URL).')
     end
 
   end

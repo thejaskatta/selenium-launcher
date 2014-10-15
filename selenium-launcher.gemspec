@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SeleniumLauncher::VERSION
   spec.authors       = ["Dave Haeffner"]
   spec.email         = ["dhaeffner@gmail.com"]
-  spec.summary       = %q{A simple way to configure and launch a Selenium instance}
-  spec.description   = %q{See README.txt}
+  spec.description       = %q{A simple way to configure and launch a Selenium instance}
+  spec.summary       = %q{See README.txt}
   spec.homepage      = "https://github.com/tourdedave/selenium-launcher"
   spec.license       = "MIT"
 

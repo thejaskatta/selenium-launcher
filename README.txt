@@ -28,7 +28,7 @@ Configuration occurs through a small set of environment variables:
 
 SE_HOST (e.g., 'grid', or nothing)
 SE_HOST_URL (e.g., URL to Standalone Remote or Grid instance)
-SE_BROWSER (e.g., 'chrome', 'firefox', 'internet-explorer', 'safari')
+SE_BROWSER (e.g., 'chrome', 'firefox', 'internet_explorer', 'safari')
 
 If these values are not set properly, a RuntimeError will be returned along with a helpful message.
 

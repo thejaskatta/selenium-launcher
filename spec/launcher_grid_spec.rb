@@ -5,14 +5,16 @@ require 'typhoeus'
 describe 'Launcher', :integration do
 
   def selenium_server_up?
-    Typhoeus.head(ENV['SE_HOST_URL'] + '/status').code == 200
+    Typhoeus.get(ENV['SE_HOST_URL'] + '/status').code == 200
   end
 
   before(:all) do
     ENV['SE_HOST'] = 'grid'
     ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
     @process_id = Process.spawn('java -jar spec/vendor/selenium-server-standalone-2.44.0.jar')
-    until selenium_server_up? { sleep 1 }
+    until selenium_server_up? do
+      sleep 2
+    end
   end
 
   after(:all) do

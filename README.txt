@@ -26,7 +26,7 @@ sudo gem install selenium-launcher
 
 Configuration occurs through a small set of environment variables:
 
-SE_HOST (e.g., 'grid', or nothing)
+SE_HOST (e.g., 'remote', or nothing)
 SE_HOST_URL (e.g., URL to Standalone Remote or Grid instance)
 SE_BROWSER (e.g., 'chrome', 'firefox', 'internet_explorer', 'safari')
 

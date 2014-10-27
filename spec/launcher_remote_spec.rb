@@ -9,7 +9,7 @@ describe 'Launcher', :integration do
   end
 
   before(:all) do
-    ENV['SE_HOST'] = 'grid'
+    ENV['SE_HOST'] = 'remote'
     ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
     @process_id = Process.spawn('java -jar spec/vendor/selenium-server-standalone-2.44.0.jar')
     until selenium_server_up? do
@@ -21,7 +21,7 @@ describe 'Launcher', :integration do
     Process.kill("KILL", @process_id)
   end
 
-  context '-> Grid -> ' do
+  context '-> Remote -> ' do
 
     after(:each) do
       @launcher.driver.quit

@@ -24,12 +24,12 @@ describe 'Selenium Launcher', :acceptance do
         'You need to specify a browser (e.g., SE_BROWSER).')
     end
 
-    it 'no Grid host URL' do
+    it 'no remote host URL' do
       ENV['SE_BROWSER'] = 'firefox'
-      ENV['SE_HOST'] = 'grid'
+      ENV['SE_HOST'] = 'remote'
       expect { driver = SeleniumLauncher.launch }.to raise_error(
         RuntimeError,
-        'You need to specify a URL when using a Grid (e.g., SE_HOST_URL).')
+        'You need to specify a URL when using a Remote node (e.g., SE_HOST_URL).')
     end
 
   end

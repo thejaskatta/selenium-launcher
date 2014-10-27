@@ -17,7 +17,7 @@ module SeleniumLauncher
     private
 
       ERRORS = { NoBrowserSpecified: 'You need to specify a browser (e.g., SE_BROWSER).',
-                 NoGridURLSpecified: 'You need to specify a URL when using a Grid (e.g., SE_HOST_URL).' }
+                 NoGridURLSpecified: 'You need to specify a URL when using a Remote node (e.g., SE_HOST_URL).' }
 
       def browser_check
         if ENV['SE_BROWSER'].nil?
@@ -26,7 +26,7 @@ module SeleniumLauncher
       end
 
       def grid_check
-        if ENV['SE_HOST'] == 'grid'
+        if ENV['SE_HOST'] == 'remote'
           if ENV['SE_HOST_URL'].nil?
             raise ERRORS[:NoGridURLSpecified]
           end

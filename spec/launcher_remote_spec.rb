@@ -43,7 +43,7 @@ describe 'Launcher', :integration do
 
     it 'Internet Explorer' do
       pending 'Windows OS required' unless OS.windows?
-      ENV['SE_BROWSER'] = 'internet-explorer'
+      ENV['SE_BROWSER'] = 'internet_explorer'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
       expect(@launcher.driver.browser).to eql :internet_explorer

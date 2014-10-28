@@ -3,7 +3,7 @@ module SeleniumLauncher
     class InternetExplorer < Browser
 
       def name
-        'internet-explorer'
+        'internet_explorer'
       end
 
     end

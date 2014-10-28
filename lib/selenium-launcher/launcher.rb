@@ -19,7 +19,7 @@ module SeleniumLauncher
 
       def launch
         case ENV['SE_HOST']
-        when 'grid'
+        when 'remote'
           ::Selenium::WebDriver.for(
             :remote,
             url: ENV['SE_HOST_URL'],

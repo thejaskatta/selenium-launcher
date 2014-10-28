@@ -46,10 +46,11 @@ describe 'Launcher', :integration do
       ENV['SE_BROWSER'] = 'internet-explorer'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
-      expect(@launcher.driver.browser).to eql :"internet-explorer"
+      expect(@launcher.driver.browser).to eql :internet_explorer
     end
 
     it 'Safari' do
+      skip 'Due to unresolved Selenium issue. See https://github.com/tourdedave/selenium-launcher/issues/3 for details.'
       ENV['SE_BROWSER'] = 'safari'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver

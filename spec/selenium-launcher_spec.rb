@@ -3,6 +3,7 @@ require_relative '../lib/selenium-launcher'
 describe 'Selenium Launcher', :acceptance do
 
   it 'runs' do
+    ENV['SE_HOST'] = nil
     ENV['SE_BROWSER'] = 'firefox'
     driver = SeleniumLauncher.launch
     expect(driver.class).to eql Selenium::WebDriver::Driver

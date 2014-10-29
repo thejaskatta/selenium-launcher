@@ -42,7 +42,7 @@ describe 'Launcher', :integration do
     end
 
     it 'Internet Explorer' do
-      pending 'Windows OS required' unless OS.windows?
+      skip 'Windows OS required' unless OS.windows?
       ENV['SE_BROWSER'] = 'internet_explorer'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver
@@ -50,7 +50,8 @@ describe 'Launcher', :integration do
     end
 
     it 'Safari' do
-      skip 'Due to unresolved Selenium issue. See https://github.com/tourdedave/selenium-launcher/issues/3 for details.'
+      # See https://github.com/tourdedave/selenium-launcher/issues/3 if you experience Safari issues
+      skip 'Safari on Windows is unsupported' if OS.windows?
       ENV['SE_BROWSER'] = 'safari'
       @launcher = SeleniumLauncher::Launcher.new
       expect(@launcher.driver.class).to eql Selenium::WebDriver::Driver

@@ -38,10 +38,10 @@ ENV['SE_BROWSER'] = 'firefox'
 driver = SeleniumLauncher.launch
 driver.quit
 
-=== Grid
+=== Remote
 
 ENV['SE_BROWSER'] = 'firefox'
-ENV['SE_HOST'] = 'grid'
+ENV['SE_HOST'] = 'remote'
 ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
 driver = SeleniumLauncher.launch
 driver.quit

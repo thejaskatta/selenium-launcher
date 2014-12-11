@@ -20,7 +20,7 @@ describe 'Selenium Launcher', :acceptance do
     end
 
     it 'no browser' do
-      expect { driver = SeleniumLauncher.launch }.to raise_error(
+      expect { SeleniumLauncher.launch }.to raise_error(
         RuntimeError,
         'You need to specify a browser (e.g., SE_BROWSER).')
     end
@@ -28,7 +28,7 @@ describe 'Selenium Launcher', :acceptance do
     it 'no remote host URL' do
       ENV['SE_BROWSER'] = 'firefox'
       ENV['SE_HOST'] = 'remote'
-      expect { driver = SeleniumLauncher.launch }.to raise_error(
+      expect { SeleniumLauncher.launch }.to raise_error(
         RuntimeError,
         'You need to specify a URL when using a Remote node (e.g., SE_HOST_URL).')
     end

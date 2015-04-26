@@ -11,7 +11,7 @@ describe 'Launcher', :integration do
   before(:all) do
     ENV['SE_HOST'] = 'remote'
     ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
-    @process_id = Process.spawn('java -jar spec/vendor/selenium-server-standalone-2.44.0.jar')
+    @process_id = Process.spawn('java -jar spec/vendor/selenium-server-standalone-2.45.0.jar')
     until selenium_server_up? do
       sleep 2
     end

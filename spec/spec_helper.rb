@@ -1,3 +1,5 @@
+require_relative '../lib/selenium-launcher'
+
 module OS
   def OS.windows?
     (/cygwin|mswin|mingw|bccwin|wince|emx/ =~ RUBY_PLATFORM) != nil
@@ -17,3 +19,9 @@ module OS
 end
 
 include OS
+
+RSpec.configure do |config|
+  config.before(:all) do
+    Selenium::WebDriver::Chrome::Service.executable_path = File.join(Dir.pwd, 'spec/vendor/chromedriver')
+  end
+end

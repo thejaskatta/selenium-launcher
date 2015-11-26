@@ -1,4 +1,4 @@
-require_relative '../lib/selenium-launcher'
+require_relative 'spec_helper'
 
 describe 'Selenium Launcher', :acceptance do
 

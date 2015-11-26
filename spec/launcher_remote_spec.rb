@@ -1,5 +1,4 @@
 require_relative 'spec_helper'
-require_relative '../lib/selenium-launcher/launcher'
 require 'typhoeus'
 
 describe 'Launcher', :integration do
@@ -9,9 +8,10 @@ describe 'Launcher', :integration do
   end
 
   before(:all) do
-    ENV['SE_HOST'] = 'remote'
-    ENV['SE_HOST_URL'] = 'http://localhost:4444/wd/hub'
-    @process_id = Process.spawn('java -jar spec/vendor/selenium-server-standalone-2.45.0.jar')
+    ENV['SE_HOST']      = 'remote'
+    ENV['SE_HOST_URL']  = 'http://localhost:4444/wd/hub'
+    @process_id = Process.spawn(
+      'java -jar spec/vendor/selenium-server-standalone-2.48.2.jar -Dwebdriver.chrome.driver=spec/vendor/chromedriver')
     until selenium_server_up? do
       sleep 2
     end
